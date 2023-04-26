@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 # python imports
-from falconpy.api_complete import APIHarness
+from falconpy import APIHarness
 import logging
 import requests
 import json
@@ -36,7 +36,7 @@ class CS_Intel_Indicators_Humio():
             t.seek(0)
             read = t.read()
             tracker = read.split('\n')
-            if len(tracker) == 0:
+            if len(read) == 0:
                 logging.info('IntelIndicators2Humio v' + version + ': Tracker file is empty')
                 pass
             else:
